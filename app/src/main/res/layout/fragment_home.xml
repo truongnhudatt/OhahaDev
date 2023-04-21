@@ -4,65 +4,226 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#CCC9CA"
     android:orientation="vertical"
     tools:context=".fragments.HomeFragment">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/imageIntroViewPager"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content" />
+
                 <me.relex.circleindicator.CircleIndicator3
                     android:id="@+id/circleIndicator3Intro"
                     android:layout_width="wrap_content"
+                    android:layout_height="20dp"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="5dp"
-                    android:layout_height="20dp"/>
+                    android:layout_marginTop="5dp" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="-25dp"
+                android:background="@drawable/group_frame_1"
                 android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/group_frame_1_1"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:background="@drawable/group_frame_1_1_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:background="@drawable/group_frame_1_1_1_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center|start"
+                            android:padding="15dp"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:id="@+id/location"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="5dp"
+                                android:drawablePadding="5dp"
+                                app:drawableStartCompat="@drawable/baseline_location_on_24" />
+                            <TextView
+                                android:id="@+id/textView1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:textColor="@color/pink"
+                                android:textStyle="bold"
+                                android:text="Hà Nội"/>
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/editTextTextPersonName"
+                            android:background="@color/gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_weight="1"
+                            android:ems="15"
+                            android:hint="Tìm theo quận, tên đường, địa điểm"
+                            android:inputType="textPersonName"
+                            android:minHeight="48dp"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+
+                    android:gravity="center_horizontal"
+                    android:background="@drawable/group_frame_1_2"
                     android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/textView"
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="70dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:drawablePadding="5dp"
-                        android:text="Hà Nội"
-                        app:drawableStartCompat="@drawable/baseline_location_on_24" />
+                        android:layout_marginEnd="50dp"
+                        android:orientation="vertical">
 
-                    <EditText
-                        android:id="@+id/editTextTextPersonName"
-                        android:layout_width="wrap_content"
+                        <ImageButton
+                            android:layout_gravity="center"
+                            android:id="@+id/imageButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/group_frame_1_2_1"
+                            android:backgroundTint="@color/gray"
+                            android:src="@drawable/baseline_electric_bolt_24" />
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textSize="14sp"
+                            android:textAlignment="center"
+                            android:text="Tìm theo nhiều quận" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="70dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:ems="15"
-                        android:hint="Tìm theo quận, tên đường, địa điểm"
-                        android:inputType="textPersonName"
-                        android:minHeight="48dp"
-                        android:textSize="15sp" />
+                        android:layout_marginEnd="50dp"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/imageButton2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/group_frame_1_2_1"
+                            android:backgroundTint="@color/gray"
+                            android:src="@drawable/outline_gps_fixed_24" />
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textSize="14sp"
+                            android:textAlignment="center"
+                            android:text="Tìm gần nơi học &amp; làm" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/imageButton3"
+                            android:layout_width="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/group_frame_1_2_1"
+                            android:backgroundTint="@color/gray"
+                            android:src="@drawable/baseline_add_home_24" />
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textSize="14sp"
+                            android:textAlignment="center"
+                            android:text="Đăng phòng dễ" />
+                    </LinearLayout>
+
                 </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Xu hướng tìm kiếm" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewTrending"
+                android:layout_width="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/group_frame_2"
+                android:orientation="vertical">
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="240dp"
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ohana1" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewRoom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
             </LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

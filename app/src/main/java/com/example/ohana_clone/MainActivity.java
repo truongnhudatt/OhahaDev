@@ -18,9 +18,9 @@ public class MainActivity extends AppCompatActivity {
 
     private MeowBottomNavigation bottomNavigation;
 
-    private final static int HOME = 1;
-    private final static int GROUP = 2;
-    private final static int FAVORITE = 3;
+    private final static int HOME = 3;
+    private final static int GROUP = 1;
+    private final static int FAVORITE = 2;
     private final static int CHAT = 4;
     private final static int MANAGE_ACCOUNTS = 5;
 
@@ -34,9 +34,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void setUpBottomNavigation(){
         bottomNavigation = findViewById(R.id.bottomNavigation);
-        bottomNavigation.add(new MeowBottomNavigation.Model(HOME, R.drawable.baseline_home_24));
         bottomNavigation.add(new MeowBottomNavigation.Model(GROUP, R.drawable.baseline_group_24));
         bottomNavigation.add(new MeowBottomNavigation.Model(FAVORITE, R.drawable.baseline_favorite_24));
+        bottomNavigation.add(new MeowBottomNavigation.Model(HOME, R.drawable.baseline_home_24));
         bottomNavigation.add(new MeowBottomNavigation.Model(CHAT, R.drawable.baseline_chat_24));
         bottomNavigation.add(new MeowBottomNavigation.Model(MANAGE_ACCOUNTS, R.drawable.baseline_manage_accounts_24));
         bottomNavigation.show(HOME, true);
