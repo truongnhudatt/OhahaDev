@@ -20,10 +20,15 @@ public class RoomViewAdapter extends RecyclerView.Adapter<RoomViewAdapter.RoomVi
     private Context context;
     private List<Room> listRoom;
     private List<Room> listRoomOld;
-
+    private  boolean flag = true;
     public RoomViewAdapter(Context context, List<Room> listRoom) {
         this.context = context;
         this.listRoom = listRoom;
+    }
+    public RoomViewAdapter(Context context, List<Room> listRoom, boolean flag) {
+        this.context = context;
+        this.listRoom = listRoom;
+        this.flag = flag;
     }
 
     public void setListRoom(List<Room> listRoom) {
@@ -34,8 +39,14 @@ public class RoomViewAdapter extends RecyclerView.Adapter<RoomViewAdapter.RoomVi
     @NonNull
     @Override
     public RoomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.room_item, parent, false);
-        return new RoomViewHolder(view);
+        if(flag == true){
+            View view = LayoutInflater.from(context).inflate(R.layout.room_item, parent, false);
+            return new RoomViewHolder(view, flag);
+        }
+        else{
+            View view = LayoutInflater.from(context).inflate(R.layout.room_more_item, parent, false);
+            return new RoomViewHolder(view, flag);
+        }
     }
 
     @Override
@@ -66,15 +77,26 @@ public class RoomViewAdapter extends RecyclerView.Adapter<RoomViewAdapter.RoomVi
         private TextView txtQuan;
         private ImageView imageRoomView;
         private ImageView addToFavorite;
-        public RoomViewHolder(@NonNull View itemView) {
+        public RoomViewHolder(@NonNull View itemView, boolean flag) {
             super(itemView);
-            txtSoNguoi = itemView.findViewById(R.id.txtSoNguoi);
-            txtGiaPhong = itemView.findViewById(R.id.txtGiaPhong);
-            txtTieuDe = itemView.findViewById(R.id.txtTieuDe);
-            txtDiaChi = itemView.findViewById(R.id.txtDiaChi);
-            txtQuan = itemView.findViewById(R.id.txtQuan);
-            imageRoomView = itemView.findViewById(R.id.imageRoomView);
-            addToFavorite = itemView.findViewById(R.id.addToFavorite);
+            if(flag){
+                txtSoNguoi = itemView.findViewById(R.id.txtSoNguoi);
+                txtGiaPhong = itemView.findViewById(R.id.txtGiaPhong);
+                txtTieuDe = itemView.findViewById(R.id.txtTieuDe);
+                txtDiaChi = itemView.findViewById(R.id.txtDiaChi);
+                txtQuan = itemView.findViewById(R.id.txtQuan);
+                imageRoomView = itemView.findViewById(R.id.imageRoomView);
+                addToFavorite = itemView.findViewById(R.id.addToFavorite);
+            }
+            else{
+                txtSoNguoi = itemView.findViewById(R.id.textView5);
+                txtGiaPhong = itemView.findViewById(R.id.textView9);
+                txtTieuDe = itemView.findViewById(R.id.textView7);
+                txtDiaChi = itemView.findViewById(R.id.textView10);
+                txtQuan = itemView.findViewById(R.id.textView11);
+                imageRoomView = itemView.findViewById(R.id.imageView3);
+//                addToFavorite = itemView.findViewById(R.id.addToFavorite);
+            }
         }
     }
 }

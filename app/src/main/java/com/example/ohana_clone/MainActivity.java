@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.os.StrictMode;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 import com.example.ohana_clone.fragments.FavoriteFragment;

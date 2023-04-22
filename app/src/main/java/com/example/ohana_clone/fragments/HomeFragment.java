@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Handler;
+import android.os.StrictMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,6 +56,8 @@ public class HomeFragment extends Fragment {
     private RecyclerView recyclerViewTrending;
 
     private RecyclerView recyclerViewRoom;
+
+    private RecyclerView recyclerViewRoomMore;
 
     private CircleIndicator3 circleIndicator3Intro;
 
@@ -131,7 +134,7 @@ public class HomeFragment extends Fragment {
 
         setUpTrendingView(view);
         setUpRoomView(view);
-
+        setUpRoomViewMore(view);
         return view;
     }
 
@@ -172,6 +175,25 @@ public class HomeFragment extends Fragment {
         recyclerViewRoom.setLayoutManager(linearLayoutManager);
         recyclerViewRoom.addItemDecoration(itemDecoration);
 
+    }
+
+    private void setUpRoomViewMore(View view){
+        listRoom = new ArrayList<>();
+        listRoom.add(new Room("Phòng cho thuê 82 Yên Lãng, Quận Đống Đa", "82 Yên Lãng, Phường Thịnh Quang, Quận Đống Đa", 1, 3.2, R.drawable.image1));
+        listRoom.add(new Room("CHUNG CƯ MINI NGÕ 61 LÊ VĂN LƯƠNG", "Số 37 ngõ 61 Lê Văn Lương, Phường Trung Hoà, Quận Cầu Giấy", 4, 4.3, R.drawable.image1));
+        listRoom.add(new Room("NGÃ TƯ SỞ - BAN CÔNG - THOÁNG ĐẸP NHƯ Ý", "Ngõ 1/69 Nhà 8A - Phố Bùi Xương Trạch, Quận Thanh Xuân", 4, 5, R.drawable.image1));
+        listRoom.add(new Room("Phòng cho thuê Ngõ 37/32 Bằng Liệt, Linh Đàm", "Ngõ 37/32 số 1 Phố Bàng Liệt, Phường Hoàng Mai, Quận Hoàng Mai", 3, 3.3, R.drawable.image1));
+        listRoom.add(new Room("CHUNG CƯ MINI NGÕ 61 LÊ VĂN LƯƠNG", "Số 37 ngõ 61 Lê Văn Lương, Phường Trung Hoà, Quận Cầu Giấy", 4, 3.2, R.drawable.image1));
+        listRoom.add(new Room("CHUNG CƯ MINI NGÕ 61 LÊ VĂN LƯƠNG", "Số 37 ngõ 61 Lê Văn Lương, Phường Trung Hoà, Quận Cầu Giấy", 4, 3.2, R.drawable.image1));
+        listRoom.add(new Room("CHUNG CƯ MINI NGÕ 61 LÊ VĂN LƯƠNG", "Số 37 ngõ 61 Lê Văn Lương, Phường Trung Hoà, Quận Cầu Giấy", 4, 3.2, R.drawable.image1));
+        listRoom.add(new Room("CHUNG CƯ MINI NGÕ 61 LÊ VĂN LƯƠNG", "Số 37 ngõ 61 Lê Văn Lương, Phường Trung Hoà, Quận Cầu Giấy", 4, 3.2, R.drawable.image1));
+        listRoom.add(new Room("CHUNG CƯ MINI NGÕ 61 LÊ VĂN LƯƠNG", "Số 37 ngõ 61 Lê Văn Lương, Phường Trung Hoà, Quận Cầu Giấy", 4, 3.2, R.drawable.image1));
+        listRoom.add(new Room("CHUNG CƯ MINI NGÕ 61 LÊ VĂN LƯƠNG", "Số 37 ngõ 61 Lê Văn Lương, Phường Trung Hoà, Quận Cầu Giấy", 4, 3.2, R.drawable.image1));
+        RoomViewAdapter roomViewAdapter = new RoomViewAdapter(getContext(), listRoom, false);
+        recyclerViewRoomMore = view.findViewById(R.id.recyclerViewRoomMore);
+        recyclerViewRoomMore.setAdapter(roomViewAdapter);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
+        recyclerViewRoomMore.setLayoutManager(gridLayoutManager);
     }
 
 
