@@ -3,6 +3,7 @@ package com.example.ohana_clone;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 
@@ -12,6 +13,7 @@ import com.example.ohana_clone.fragments.GroupFragment;
 import com.example.ohana_clone.fragments.HomeFragment;
 import com.example.ohana_clone.fragments.MessageFragment;
 import com.example.ohana_clone.fragments.UserFragment;
+import com.example.ohana_clone.models.UserRequestSignup;
 
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
@@ -82,6 +84,12 @@ public class MainActivity extends AppCompatActivity {
                 .beginTransaction()
                 .replace(R.id.container, fragment, null)
                 .commit();
+    }
+
+    private void getUserRequestSignup(){
+        Intent intent = getIntent();
+        UserRequestSignup userRequestSignup = (UserRequestSignup) intent.getSerializableExtra("userRequestSignup");
+        System.out.println(userRequestSignup);
     }
 
 }

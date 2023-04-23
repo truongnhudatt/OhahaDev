@@ -2,4 +2,6 @@
     <string name="app_name">Ohana</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="signupnow"><u>Đăng ký ngay</u></string>
+    <string name="loginnow"><u>Đăng nhập ngay</u></string>
 </resources>
